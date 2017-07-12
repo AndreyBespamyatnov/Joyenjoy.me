@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<component format="1" id="Alliance.Carousel">
+  <name>Alliance Carousel</name>
+  <publisher>Alliance Global Services</publisher>
+  <publisher-url>http://www.allianceglobalservices.com</publisher-url>
+  <version>3.0</version>
+  <summary>“iCarousel port without binding”</summary>
+  <samples>
+    <sample id="Sample">
+      <name>iOS Sample</name>
+      <summary>iOS Sample</summary>
+    </sample>
+  </samples>
+</component>

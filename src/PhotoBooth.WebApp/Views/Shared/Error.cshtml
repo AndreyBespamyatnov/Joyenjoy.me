@@ -1,0 +1,70 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = "Ошибка";
+}
+
+@section header
+{
+    <!-- Start Header -->
+    <header id="header">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- Start Logo / Text -->
+                    <a class="navbar-brand text-logo" href="@Url.Action("Index", "Home")"><i class="icon-signout"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                    <!-- End Logo / Text -->
+                </div>
+                <!-- Start Navigation -->
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav menu-right">
+                        <li><a href="@Url.Action("Index", "Home")#header">Главная</a></li>
+                        <li class="dropdown">
+                            <a href="#allServices" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Услуги</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="@Url.Action("Fotobox","Home")">FOTOBOX</a></li>
+                                <li><a href="@Url.Action("Brandbox","Home")">BRANDBOX</a></li>
+                                <li><a href="@Url.Action("Instabox","Home")">INSTABOX</a></li>
+                                <li><a href="@Url.Action("Socialmatic","Home")">SOCIALMATIC</a></li>
+                                <li><a href="@Url.Action("Design","Home")">DESIGN</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="@Url.Action("Index", "Gallery")#photoGallery">Фотогалерея</a></li>
+                        <li><a href="@Url.Action("Contact", "Home")#contact">Контакты</a></li>
+                    </ul>
+                </div>
+                <!-- End Navigation  -->
+            </div>
+        </nav>
+    </header>
+    <!-- End Header -->
+}
+
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h2 class="text-danger">При обработке запроса произошла ошибка.</h2>
+            </div>
+            <div class="col-md-4">
+                <h1 class="text-danger">Ошибка.</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section scripts
+{
+    <script type="text/javascript">
+        $(".navbar").addClass("scroll-fixed-navbar");
+        $(window).scroll(function () {
+            "use strict";
+            $(".navbar").addClass("scroll-fixed-navbar");
+        });
+    </script>
+}

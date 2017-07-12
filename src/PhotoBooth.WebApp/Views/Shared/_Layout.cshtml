@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta property="og:url" content="http://joyenjoy.me/" />
+    <meta property="fb:app_id" content="1492415574405370" />
+    <meta property="og:image" content="http://joyenjoy.me/App/img/fotobox/SI-002.png" />
+    <meta property="og:title" content="JOYENJOY.me" />
+    <meta property="og:description" content="Профессиональное фотооборудование в стильном дизайне, которое подойдёт для любого формата мероприятий от свадеб и торжеств до корпоративных встреч и презентаций. Тел.: +79264000420." />
+
+    <title>joyenjoy.me</title>
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="Профессиональное фотооборудование в стильном дизайне, которое подойдёт для любого формата мероприятий от свадеб и торжеств до корпоративных встреч и презентаций. Тел.: +79264000420.">
+
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Libs CSS -->
+    <link href="~/App/css/bootstrap.css" rel="stylesheet">
+    <link href="~/App/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/App/css/simpletextrotator.css" rel="stylesheet" type="text/css" />
+    <link href="~/App/css/prettyPhoto.css" rel="stylesheet" type="text/css" media="all" />
+
+    <!-- Template CSS -->
+    <link href="~/App/css/style.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,700,800&amp;subsetting=all' rel='stylesheet' type='text/css'>
+
+    <!--[if lt IE 9]>
+        <script src="~/App/js/html5shiv.js"></script>
+        <script src="~/App/js/respond.min.js"></script>
+    <![endif]-->
+    @RenderSection("headscripts", required: false)
+</head>
+
+<body data-spy="scroll" data-target="#header">
+    
+    @RenderSection("header", required: false)
+    
+    @RenderBody()
+
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-md-9 col-sm-9">
+                    <p>&copy; joyenjoy.me. All Right Reserved</p>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-3">
+                    <ul class="social">
+                        <li class="vk"> <a href="https://vk.com/club102296476" target="_blank"> <i class="fa fa-vk"></i> </a> </li>
+                        <li class="facebook"> <a href="http://facebook.com/www.joyenjoy.me" target="_blank"> <i class="fa fa-facebook"></i> </a> </li>
+                        <li class="instagram"> <a href="http://instagram.com/joyenjoy.me" target="_blank"> <i class="fa fa-instagram"></i> </a> </li>
+                        <li class="youtube"> <a href="http://www.youtube.com/channel/UCIdZo7Wy5g_zu-B3Bn1hqfw" target="_blank"> <i class="fa fa-youtube-play"></i> </a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Start Scroll To Top  -->
+    <a href="#" class="scroll-up"><i class="fa fa-arrow-up"></i></a>
+    <!-- End Scroll To Top  -->
+    <!-- Start Js Files -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script><!--jQuery is a Javascript library that greatly reduces the amount of code that you must write.-->
+    <script type="text/javascript">window.jQuery || document.write('<script src="js/jquery-2.1.0.min.js"><\/script>')</script>
+    <script src="~/App/js/bootstrap.min.js" type="text/javascript"></script><!--Packed with many functionalies such as carousel slider, responsivity, tabs, drop downs, buttons, and many other features-->
+    <script src="~/App/js/modernizr.min.js" type="text/javascript"></script><!--Modernizr is an open-source JavaScript library that helps you build the next generation of HTML5 and CSS3-powered websites.-->
+    <script src="~/App/js/jquery.countTo.js" type="text/javascript"></script><!-- Script for Numerical Stats Countdown  -->
+    <script src="~/App/js/jquery.knob.js" type="text/javascript"></script><!-- Script for Skills Knobs  -->
+    <script src="~/App/js/jquery.simple-text-rotator.min.js" type="text/javascript"></script><!-- Script for Text Rotator  -->
+    <script src="~/App/js/jquery.waypoints.js"></script><!-- Script for launching scripts based on positioning reached  -->
+    <script src="~/App/js/jquery.prettyPhoto.js" type="text/javascript"></script><!-- Script for Lightbox Image  -->
+    
+    <script src="~/App/js/custom.js" type="text/javascript"></script><!-- Script File containing all customizations  -->
+    @RenderSection("scripts", required: false)
+    <!-- End Js Files  -->
+</body>
+</html>

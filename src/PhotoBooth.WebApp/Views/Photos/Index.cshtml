@@ -1,0 +1,116 @@
+﻿@using PhotoBooth.Models
+@model IEnumerable<Photo>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>Фото -
+    @{
+        var eventTitle = string.Empty;
+        Photo photo = Model.FirstOrDefault();
+        if (photo != null)
+        {
+            eventTitle = photo.PhotoEvent.Name;
+        }
+    }
+    @eventTitle</h2>
+<p>&nbsp;</p>
+
+<div id="no-more-tables">
+    <table class="table table-hover table-condensed">
+        <thead>
+        <tr>
+            <th>
+                Превью
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BlobPathToImage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BlobPathToPreviewImage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Md5Hash)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageWidth) / 
+                @Html.DisplayNameFor(model => model.ImageHeight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsDeleted)
+            </th>
+            <th></th>
+        </tr>
+
+        </thead>
+
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a href="/EventImages/@item.PhotoEventUuid/@item.ImageName" target="_blank">
+                        <img class="thumbnail" src="~/App/img/loading.gif"
+                             itemprop="thumbnail"
+                             style="width: 150px; height: 150px;"
+                             data-echo="/EventImages/@item.PhotoEventUuid/@item.PreviewImageName" alt="" />
+                    </a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BlobPathToImage)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BlobPathToPreviewImage)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Md5Hash)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ImageWidth) x
+                    @Html.DisplayFor(modelItem => item.ImageHeight)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsDeleted)
+                </td>
+                <td>
+                    <a href="@Url.Action("Edit", new {id = item.Id})" role="button">
+                        <span class="glyphicon glyphicon-edit " aria-hidden="true"></span>
+                    </a>
+                    <a href="@Url.Action("Delete", new {id = item.Id})" role="button">
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    </a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+    
+
+@section scripts
+{
+    <script src="~/Scripts/echo.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.nailthumb.1.1.min.js"></script>
+    <script>
+        $(".navbar").addClass("scroll-fixed-navbar");
+        $(window).scroll(function() {
+            "use strict";
+            $(".navbar").addClass("scroll-fixed-navbar");
+        });
+
+        echo.init({
+            offset: 100,
+            throttle: 250,
+            unload: false,
+            //callback: function (element, op) {
+            //    jQuery(element).nailthumb({ width: 150, height: 150 });
+            //}
+        });
+        // echo.render(); is also available for non-scroll callbacks
+    </script>
+}

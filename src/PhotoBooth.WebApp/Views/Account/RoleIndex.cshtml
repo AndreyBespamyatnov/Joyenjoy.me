@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Роли";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<p>&nbsp;</p>
+<div class="spacerBody">
+    @Html.ActionLink("Создать новую роль", "RoleCreate") | @Html.ActionLink("Добавить роли для пользователя", "RoleAddToUser")
+    <h2>Роли</h2>
+    @foreach (string s in Model)
+    {
+        <p>
+            @s
+            <span onclick=" return confirm('Вы уверены, что хотите удалить роль?') ">
+                <a href="/Account/RoleDelete?RoleName=@s" class="delLink">Удалить</a>
+            </span>
+        </p>
+    }
+</div>

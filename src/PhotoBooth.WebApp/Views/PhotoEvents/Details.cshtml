@@ -1,0 +1,120 @@
+﻿@model PhotoBooth.Models.PhotoEvent
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PhotoEvent</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PhotoBoothEntity.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhotoBoothEntity.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HashTag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HashTag)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartDateTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndDateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndDateTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShowOnGallery)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShowOnGallery)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsPublic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsPublic)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LinkToLastZip)
+        </dt>
+
+        <dd>
+            <a href="@Url.Action("DownloadZip", new { id = Model.Id })">
+                Скачать архив
+            </a>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstagrammBrandingImage)
+        </dt>
+
+        <dd>
+            @if (!string.IsNullOrWhiteSpace(Model.InstagrammBrandingImage))
+            {
+                <img alt="Embedded Image" src="data:image/png;base64,@Model.InstagrammBrandingImage" />
+            }
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.LinkToGalleryPreviewImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LinkToGalleryPreviewImage)
+        </dd>*@
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Изменить", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Отменить и вернуться к списку", "Index")
+</p>

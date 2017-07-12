@@ -1,0 +1,609 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6031096F-44C0-423B-8352-4E0EC505CE49}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PhotoBooth.WebApp</RootNamespace>
+    <AssemblyName>PhotoBooth.WebApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>b5926e20</NuGetPackageImportStamp>
+    <ApplicationInsightsResourceId>/subscriptions/2fb07b87-1ad3-4d1c-ad3f-f668b4e4bbfa/resourcegroups/Default-ApplicationInsights-CentralUS/providers/microsoft.insights/components/PhotoBooth.WebApp</ApplicationInsightsResourceId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.1.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights.Extensibility.DependencyCollector, Version=1.0.0.4227, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.1.0.0\lib\net45\Microsoft.ApplicationInsights.Extensibility.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector, Version=1.0.0.4231, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.1.0.0\lib\net45\Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights.Extensibility.Web, Version=1.0.0.4227, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.1.0.0\lib\net45\Microsoft.ApplicationInsights.Extensibility.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights.TraceListener, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.TraceListener.2.1.0\lib\net45\Microsoft.ApplicationInsights.TraceListener.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights.Web.TelemetryChannel, Version=1.0.0.4227, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.TelemetryChannel.1.0.0\lib\net45\Microsoft.ApplicationInsights.Web.TelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.4\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.6.4\lib\net40\Microsoft.Data.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Services.Client.5.6.4\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Diagnostics.Instrumentation.Extensions.Intercept, Version=0.17.0.194, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.0.17.0\lib\net45\Microsoft.Diagnostics.Instrumentation.Extensions.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration, Version=1.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.1.8.0.0\lib\net35-full\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=4.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAzure.Storage.4.3.0\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.0.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Spatial, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.6.4\lib\net40\System.Spatial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.0.0\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.0.0\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="API\EmailController.cs" />
+    <Compile Include="API\PhotoBoothEntitiesController.cs" />
+    <Compile Include="API\PhotoEventsController.cs" />
+    <Compile Include="API\PrintQueuesController.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\GalleryController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PhotoBoothEntitiesController.cs" />
+    <Compile Include="Controllers\PhotoEventsController.cs" />
+    <Compile Include="Controllers\PhotosController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507061013067_InitialCreate.cs" />
+    <Compile Include="Migrations\201507061013067_InitialCreate.Designer.cs">
+      <DependentUpon>201507061013067_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\EmailRequest.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Routers\ImageRouteHandler.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App\fonts\fontawesome-webfont.svg" />
+    <Content Include="App\img\245x245_JJW.png" />
+    <Content Include="App\img\brandbox\SI-006.png" />
+    <Content Include="App\img\brandbox\SI-007.png" />
+    <Content Include="App\img\brandbox\SI-008.png" />
+    <Content Include="App\img\brandbox\SI-009.png" />
+    <Content Include="App\img\brandbox\SI-010.png" />
+    <Content Include="App\img\brandbox\topper-11.png" />
+    <Content Include="App\img\brandbox\topper-12.png" />
+    <Content Include="App\img\brandbox\topper-13.png" />
+    <Content Include="App\img\brandbox\topper-14.png" />
+    <Content Include="App\img\brandbox\topper-15.png" />
+    <Content Include="App\img\brandbox_homepage.png" />
+    <Content Include="App\img\disign\topper-26.png" />
+    <Content Include="App\img\disign\topper-27.png" />
+    <Content Include="App\img\disign\topper-28.png" />
+    <Content Include="App\img\disign\topper-29.png" />
+    <Content Include="App\img\disign\topper-30.png" />
+    <Content Include="App\img\firstpage\topper-01.png" />
+    <Content Include="App\img\firstpage\topper-02.png" />
+    <Content Include="App\img\firstpage\topper-03.png" />
+    <Content Include="App\img\firstpage\topper-04.png" />
+    <Content Include="App\img\firstpage\topper-05.png" />
+    <Content Include="App\img\fotobox\SI-001.png" />
+    <Content Include="App\img\fotobox\SI-002.png" />
+    <Content Include="App\img\fotobox\SI-003.png" />
+    <Content Include="App\img\fotobox\SI-004.png" />
+    <Content Include="App\img\fotobox\SI-005.png" />
+    <Content Include="App\img\fotobox\topper-06.png" />
+    <Content Include="App\img\fotobox\topper-07.png" />
+    <Content Include="App\img\fotobox\topper-08.png" />
+    <Content Include="App\img\fotobox\topper-09.png" />
+    <Content Include="App\img\fotobox\topper-10.png" />
+    <Content Include="App\img\fotobox_homepage.png" />
+    <Content Include="App\img\img-001.png" />
+    <Content Include="App\img\img-002.png" />
+    <Content Include="App\img\img-003.png" />
+    <Content Include="App\img\img-004.png" />
+    <Content Include="App\img\img-005.jpg" />
+    <Content Include="App\img\img-005.png" />
+    <Content Include="App\img\instabox\SI-011.png" />
+    <Content Include="App\img\instabox\SI-012.png" />
+    <Content Include="App\img\instabox\SI-013.png" />
+    <Content Include="App\img\instabox\SI-014.png" />
+    <Content Include="App\img\instabox\SI-015.png" />
+    <Content Include="App\img\instabox\topper-16.png" />
+    <Content Include="App\img\instabox\topper-17.png" />
+    <Content Include="App\img\instabox\topper-18.png" />
+    <Content Include="App\img\instabox\topper-19.png" />
+    <Content Include="App\img\instabox\topper-20.png" />
+    <Content Include="App\img\InstaBox_homepage.png" />
+    <Content Include="App\img\joyenjoy_trans.ico" />
+    <Content Include="App\img\joyenjoy_trans_max192.ico" />
+    <Content Include="App\img\joyenjoy_trans_max256.ico" />
+    <Content Include="App\img\loading.gif" />
+    <Content Include="App\img\main-slider5.png" />
+    <Content Include="App\img\socialmatic-1L.jpg" />
+    <Content Include="App\img\socialmatic-2L.jpg" />
+    <Content Include="App\img\socialmatic-3L.jpg" />
+    <Content Include="App\img\socialmatic-4L.jpg" />
+    <Content Include="App\img\socialmatic-5L.jpg" />
+    <Content Include="App\img\socialmatic\topper-21.png" />
+    <Content Include="App\img\socialmatic\topper-22.png" />
+    <Content Include="App\img\socialmatic\topper-23.png" />
+    <Content Include="App\img\socialmatic\topper-24.png" />
+    <Content Include="App\img\socialmatic\topper-25.png" />
+    <Content Include="App\img\socialmatic_400x400.jpg" />
+    <Content Include="App\img\socialmatic_homepage.jpg" />
+    <Content Include="App\img\socialmatic_homepage.png" />
+    <Content Include="App\img\socialmatic_slider1.png" />
+    <Content Include="App\img\socialmatic_slider2.png" />
+    <Content Include="App\img\socialmatic_slider3.png" />
+    <Content Include="App\img\Socialmatic_small_slider1.jpg" />
+    <Content Include="App\img\Socialmatic_small_slider2.jpg" />
+    <Content Include="App\img\Socialmatic_small_slider3.jpg" />
+    <Content Include="App\js\validator.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="App\css\bootstrap.css" />
+    <Content Include="App\css\font-awesome.min.css" />
+    <Content Include="App\css\prettyPhoto.css" />
+    <Content Include="App\css\simpletextrotator.css" />
+    <Content Include="App\css\style.css" />
+    <Content Include="App\fonts\fontawesome-webfontba72.svg" />
+    <Content Include="App\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="App\img\245x245_JJ.ico" />
+    <Content Include="App\img\245x245_JJW.ico" />
+    <Content Include="App\img\blur.png" />
+    <Content Include="App\img\grey-pattern.jpg" />
+    <Content Include="App\img\headshot-bg.jpg" />
+    <Content Include="App\img\loading.png" />
+    <Content Include="App\img\main-slider1.svg" />
+    <Content Include="App\img\main-slider2.png" />
+    <Content Include="App\img\main-slider3.png" />
+    <Content Include="App\img\main-slider4.png" />
+    <Content Include="App\img\prettyPhoto\dark_rounded\btnNext.png" />
+    <Content Include="App\img\prettyPhoto\dark_rounded\btnPrevious.png" />
+    <Content Include="App\img\prettyPhoto\dark_rounded\contentPattern.png" />
+    <Content Include="App\img\prettyPhoto\dark_rounded\loader.gif" />
+    <Content Include="App\img\prettyPhoto\dark_rounded\sprite.png" />
+    <Content Include="App\img\prettyPhoto\dark_square\btnNext.png" />
+    <Content Include="App\img\prettyPhoto\dark_square\btnPrevious.png" />
+    <Content Include="App\img\prettyPhoto\dark_square\loader.gif" />
+    <Content Include="App\img\prettyPhoto\dark_square\sprite.png" />
+    <Content Include="App\img\prettyPhoto\default\default_thumb.png" />
+    <Content Include="App\img\prettyPhoto\default\loader.gif" />
+    <Content Include="App\img\prettyPhoto\default\sprite.png" />
+    <Content Include="App\img\prettyPhoto\default\sprite_next.png" />
+    <Content Include="App\img\prettyPhoto\default\sprite_prev.png" />
+    <Content Include="App\img\prettyPhoto\default\sprite_x.png" />
+    <Content Include="App\img\prettyPhoto\default\sprite_y.png" />
+    <Content Include="App\img\prettyPhoto\facebook\btnNext.png" />
+    <Content Include="App\img\prettyPhoto\facebook\btnPrevious.png" />
+    <Content Include="App\img\prettyPhoto\facebook\contentPatternBottom.png" />
+    <Content Include="App\img\prettyPhoto\facebook\contentPatternLeft.png" />
+    <Content Include="App\img\prettyPhoto\facebook\contentPatternRight.png" />
+    <Content Include="App\img\prettyPhoto\facebook\contentPatternTop.png" />
+    <Content Include="App\img\prettyPhoto\facebook\default_thumbnail.gif" />
+    <Content Include="App\img\prettyPhoto\facebook\loader.gif" />
+    <Content Include="App\img\prettyPhoto\facebook\sprite.png" />
+    <Content Include="App\img\prettyPhoto\light_rounded\btnNext.png" />
+    <Content Include="App\img\prettyPhoto\light_rounded\btnPrevious.png" />
+    <Content Include="App\img\prettyPhoto\light_rounded\loader.gif" />
+    <Content Include="App\img\prettyPhoto\light_rounded\sprite.png" />
+    <Content Include="App\img\prettyPhoto\light_square\btnNext.png" />
+    <Content Include="App\img\prettyPhoto\light_square\btnPrevious.png" />
+    <Content Include="App\img\prettyPhoto\light_square\sprite.png" />
+    <Content Include="App\img\testi.png" />
+    <Content Include="App\img\thumb.png" />
+    <Content Include="App\img\thumb2.png" />
+    <Content Include="App\js\bootstrap.min.js" />
+    <Content Include="App\js\custom.js" />
+    <Content Include="App\js\gmaps.js" />
+    <Content Include="App\js\html5shiv.js" />
+    <Content Include="App\js\jquery-2.1.0.min.js" />
+    <Content Include="App\js\jquery.countTo.js" />
+    <Content Include="App\js\jquery.knob.js" />
+    <Content Include="App\js\jquery.prettyPhoto.js" />
+    <Content Include="App\js\jquery.simple-text-rotator.min.js" />
+    <Content Include="App\js\jquery.validate.min.js" />
+    <Content Include="App\js\jquery.waypoints.js" />
+    <Content Include="App\js\modernizr.min.js" />
+    <Content Include="App\js\respond.min.js" />
+    <Content Include="Content\bootstrap-datetimepicker.css" />
+    <Content Include="Content\bootstrap-datetimepicker.min.css" />
+    <Content Include="Content\photoswipe\default-skin\default-skin.css" />
+    <Content Include="Content\photoswipe\default-skin\default-skin.png" />
+    <Content Include="Content\photoswipe\default-skin\default-skin.svg" />
+    <Content Include="Content\photoswipe\default-skin\preloader.gif" />
+    <Content Include="Content\photoswipe\photoswipe.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Images\carusel1.png" />
+    <Content Include="Images\carusel2.png" />
+    <Content Include="Images\carusel3.png" />
+    <Content Include="Images\LOGO_JJ_FINAL_CUR_bg.svg" />
+    <Content Include="App\img\LOGO_JJ_FINAL_CUR_sm.svg" />
+    <Content Include="Images\site_logo.png" />
+    <Content Include="Scripts\ai.0.15.0-build28683.js" />
+    <Content Include="Scripts\ai.0.15.0-build28683.min.js" />
+    <Content Include="Scripts\bootstrap-datetimepicker.js" />
+    <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config" />
+    <Content Include="App\fonts\fontawesome-webfontba72.eot" />
+    <Content Include="App\fonts\fontawesome-webfontba72.ttf" />
+    <Content Include="App\fonts\fontawesome-webfontba72.woff" />
+    <Content Include="App\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="App\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="App\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="App\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="App\fonts\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="App\fonts\fontawesome-webfont.eot" />
+    <Content Include="App\fonts\fontawesome-webfont.ttf" />
+    <Content Include="App\fonts\fontawesome-webfont.woff" />
+    <Content Include="App\fonts\fontawesome-webfont.woff2" />
+    <Content Include="App\fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="Properties\PublishProfiles\PhotoBoothWebApp - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\PhotoBoothWebApp.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\echo.js" />
+    <Content Include="Scripts\holder.js" />
+    <Content Include="Scripts\holder.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.nailthumb.1.1.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\moment-with-locales.js" />
+    <Content Include="Scripts\moment-with-locales.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\PhotoBooth.js" />
+    <Content Include="Scripts\photoswipe-ui-default.js" />
+    <Content Include="Scripts\photoswipe-ui-default.min.js" />
+    <Content Include="Scripts\photoswipe.js" />
+    <Content Include="Scripts\photoswipe.min.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\PhotoBoothEntities\Create.cshtml" />
+    <Content Include="Views\PhotoBoothEntities\Delete.cshtml" />
+    <Content Include="Views\PhotoBoothEntities\Details.cshtml" />
+    <Content Include="Views\PhotoBoothEntities\Edit.cshtml" />
+    <Content Include="Views\PhotoBoothEntities\Index.cshtml" />
+    <Content Include="Views\PhotoEvents\Create.cshtml" />
+    <Content Include="Views\PhotoEvents\Delete.cshtml" />
+    <Content Include="Views\PhotoEvents\Details.cshtml" />
+    <Content Include="Views\PhotoEvents\Edit.cshtml" />
+    <Content Include="Views\PhotoEvents\Index.cshtml" />
+    <Content Include="Views\Account\RoleIndex.cshtml" />
+    <Content Include="Views\Account\RoleAddToUser.cshtml" />
+    <Content Include="Views\Account\RoleCreate.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\Gallery\Index.cshtml" />
+    <Content Include="Views\Gallery\GetGallery.cshtml" />
+    <Content Include="Views\Gallery\ShowError.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Fotobox.cshtml" />
+    <Content Include="Views\Home\Socialmatic.cshtml" />
+    <Content Include="Views\Home\Brandbox.cshtml" />
+    <Content Include="Views\Home\Design.cshtml" />
+    <Content Include="Views\Home\Instabox.cshtml" />
+    <Content Include="Views\Photos\Delete.cshtml" />
+    <Content Include="Views\Photos\Details.cshtml" />
+    <Content Include="Views\Photos\Edit.cshtml" />
+    <Content Include="Views\Photos\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PhotoBooth.DAL\PhotoBooth.DAL.csproj">
+      <Project>{b1f35053-1a83-4f7a-a5da-e2da89ff6360}</Project>
+      <Name>PhotoBooth.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201507061013067_InitialCreate.resx">
+      <DependentUpon>201507061013067_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53925</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:16152/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.ApplicationInsights.Agent.Intercept.0.17.0\build\Microsoft.ApplicationInsights.Agent.Intercept.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.Agent.Intercept.0.17.0\build\Microsoft.ApplicationInsights.Agent.Intercept.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.Agent.Intercept.0.17.0\build\Microsoft.ApplicationInsights.Agent.Intercept.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.Agent.Intercept.0.17.0\build\Microsoft.ApplicationInsights.Agent.Intercept.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

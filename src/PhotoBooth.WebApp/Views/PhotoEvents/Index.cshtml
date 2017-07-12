@@ -1,0 +1,116 @@
+﻿@model IEnumerable<PhotoBooth.Models.PhotoEvent>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>События</h2>
+
+<p>
+    <a href="@Url.Action("Create")" role="button" class="btn btn-primary btn-sm">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Добавить
+    </a>
+</p>
+
+<div id="no-more-tables">
+    <table class="table table-hover table-condensed">
+        <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhotoBoothEntityId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HashTag)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndDateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShowOnGallery)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsPublic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Created)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.LinkToLastZip)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LinkToGalleryPreviewImage)
+                </th>*@
+            <th></th>
+        </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td data-title="@Html.DisplayNameFor(model => model.Name)">
+                        <a href="@Url.Action("Details", new { id = item.Id })" role="button">
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </a>
+                    </td>
+                    <td data-title="@Html.DisplayNameFor(model => model.PhotoBoothEntityId)">
+                        <a href="@Url.Action("Details", "PhotoBoothEntities", new { id = item.PhotoBoothEntityId })" role="button">
+                            @Html.DisplayFor(modelItem => item.PhotoBoothEntity.Name)
+                        </a>
+                    </td>
+                    <td data-title="@Html.DisplayNameFor(model => model.Description)">
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td data-title="@Html.DisplayNameFor(model => model.HashTag)">
+                        @Html.DisplayFor(modelItem => item.HashTag)
+                    </td>
+                    <td data-title="@Html.DisplayNameFor(model => model.StartDateTime)">
+                        @Html.DisplayFor(modelItem => item.StartDateTime)
+                    </td>
+                    <td data-title="@Html.DisplayNameFor(model => model.EndDateTime)">
+                        @Html.DisplayFor(modelItem => item.EndDateTime)
+                    </td>
+                    <td data-title="@Html.DisplayNameFor(model => model.ShowOnGallery)">
+                        @Html.DisplayFor(modelItem => item.ShowOnGallery)
+                    </td>
+                    <td data-title="@Html.DisplayNameFor(model => model.IsPublic)">
+                        @Html.DisplayFor(modelItem => item.IsPublic)
+                    </td>
+                    <td data-title="@Html.DisplayNameFor(model => model.Created)">
+                        @Html.DisplayFor(modelItem => item.CreatedLocal)
+                    </td>
+                    @*<td data-title="@Html.DisplayNameFor(model => model.LinkToLastZip)">
+                        @Html.DisplayFor(modelItem => item.LinkToLastZip)
+                    </td>
+                    <td data-title="@Html.DisplayNameFor(model => model.LinkToGalleryPreviewImage)">
+                        @Html.DisplayFor(modelItem => item.LinkToGalleryPreviewImage)
+                    </td>*@
+                    <td>
+                        <a href="@Url.Action("EventPhotos", "Photos", new { photoEventId = item.Id })" role="button">
+                            <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
+                        </a>
+                        <a href="@Url.Action("ZipFiles", new {id = item.Id})" role="button">
+                            <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+                        </a>
+                        <a href="@Url.Action("Edit", new {id = item.Id})" role="button">
+                            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                        </a>
+                        <a href="@Url.Action("Delete", new {id = item.Id})" role="button">
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

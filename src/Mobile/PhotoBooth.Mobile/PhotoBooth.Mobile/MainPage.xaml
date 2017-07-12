@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="PhotoBooth.Mobile.MainPage">
+    <RelativeLayout>
+        <Image Source="2048x1536_background.png" 
+               RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+               RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+        <Grid RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}">
+            <StackLayout x:Name="mainLayout">
+                <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="FillAndExpand" HeightRequest="100" BackgroundColor="#121212">
+                    <Image Source="2048x1536_logosmall.png" HorizontalOptions="CenterAndExpand"></Image>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand">
+                    <StackLayout HorizontalOptions="Start" WidthRequest="150" VerticalOptions="CenterAndExpand" Padding="25,25,25,25">
+                        <Button HeightRequest="111" WidthRequest="111" Image="2048x1536_K_left" Clicked="OnLeftButtonClicked"></Button>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" x:Name="ImageStackLayout" BackgroundColor="Transparent">
+                        <ActivityIndicator IsRunning="true"
+                           Color="#009d48"
+                           BackgroundColor="Transparent"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="CenterAndExpand"
+                           WidthRequest="50"
+                           HeightRequest="50"
+                           RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                                    Property=Height,
+                                    Factor=0.5}"
+                           RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                                    Property=Height,
+                                    Factor=0.5}" />
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="End" WidthRequest="150" VerticalOptions="CenterAndExpand" Padding="25,25,25,25">
+                            <Button HeightRequest="111" WidthRequest="111" Image="2048x1536_K_right" Clicked="OnRightButtonClicked"></Button>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="FillAndExpand" HeightRequest="100" BackgroundColor="#121212">
+                    
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </RelativeLayout>
+</ContentPage>

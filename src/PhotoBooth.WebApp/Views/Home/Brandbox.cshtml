@@ -1,0 +1,311 @@
+﻿@{
+    ViewBag.Title = "BrandBox";
+}
+
+@section header
+{
+    <!-- Start Header -->
+    <header id="header">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- Start Logo / Text -->
+                    <a class="navbar-brand text-logo" href="@Url.Action("Index", "Home")"><i class="icon-signout"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                    <!-- End Logo / Text -->
+                </div>
+                <!-- Start Navigation -->
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav menu-right">
+                        <li class="active"><a href="@Url.Action("Index","Home")#header">Главная</a></li>
+                        <li class="dropdown">
+                            <a href="#allServices" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Услуги</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="@Url.Action("Fotobox","Home")">FOTOBOX</a></li>
+                                <li><a href="@Url.Action("Brandbox","Home")">BRANDBOX</a></li>
+                                <li><a href="@Url.Action("Instabox","Home")">INSTABOX</a></li>
+                                <li><a href="@Url.Action("Socialmatic","Home")">SOCIALMATIC</a></li>
+                                <li><a href="@Url.Action("Design","Home")">DESIGN</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="@Url.Action("Index", "Gallery")#photoGallery">Фотогалерея</a></li>
+                        <li>@Html.ActionLink("Контакты", "Contact", "Home")</li>
+                    </ul>
+                </div>
+                <!-- End Navigation  -->
+            </div>
+        </nav>
+    </header>
+    <!-- End Header -->
+}
+
+
+
+<div id="main-slider" class="carousel slide carousel-fade">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#main-slider" data-slide-to="0" class="active"></li>
+        <li data-target="#main-slider" data-slide-to="1"></li>
+        <li data-target="#main-slider" data-slide-to="2"></li>
+        <li data-target="#main-slider" data-slide-to="3"></li>
+        <li data-target="#main-slider" data-slide-to="4"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        <!-- Start Slide 1  -->
+        <div class="item cover brandbox_slide1 active">
+            <div class="carousel-caption">
+            </div>
+        </div>
+        <!-- End Slide 1
+        <!-- Start Slide 2  -->
+        <div class="item cover brandbox_slide2">
+            <div class="carousel-caption">
+            </div>
+        </div>
+        <!-- End Slide 2  -->
+        <!-- Start Slide 3 -->
+        <div class="item cover brandbox_slide3">
+            <div class="carousel-caption">
+            </div>
+        </div>
+        <!-- End Slide 3  -->
+        <div class="item cover brandbox_slide4">
+            <div class="carousel-caption">
+            </div>
+        </div>
+        <div class="item cover brandbox_slide5">
+            <div class="carousel-caption">
+            </div>
+        </div>
+    </div>
+
+    <!-- Start Black Background Overlay  -->
+    <div class="overlay-bg"></div>
+    <!-- End Background Overlay  -->
+    <!-- Start Navigations  -->
+    <a class="left carousel-control" href="#main-slider" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+    <a class="right carousel-control" href="#main-slider" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    <!-- End Navigations  -->
+</div>
+
+<section id="about" class="section sectionsmall">
+    <div class="container">
+        <div class="row">
+            <!-- Start Headline -->
+            <div class="col-lg-12 headline">
+                <h1>BRANDBOX</h1>
+                <p class="x20font pbtextcolor">
+                    современное решение для продвижения товаров и услуг.
+                    BrandBox является аналогом FotoBox, однако, имеет ряд существенных отличий, позволяющих использовать его для рекламных и демонстрационных целей.
+                </p>
+            </div>
+            <!-- End Headline  -->
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <!-- Start Text  -->
+                <p>&nbsp;</p>
+                <p class="x16font textJustify" style="margin-bottom: 10px;">
+                    <b>BrandBox от JoyEnjoy.me </b> обладает стильным современным дизайном и выполнен в тонком корпусе для удобства установки в помещениях любой площади. 
+                    Яркий сенсорный экран может воспроизводить любую информацию рекламного или демонстрационного характера, а при необходимости, каждый желающий может 
+                    сделать собственное фото на фоне рекламируемого продукта или результата предоставляемых услуг. Готовая фотография в цифровом формате будет содержать 
+                    логотип компании заказчика и его контакты и может быть размещена в социальных сетях клиента.
+                </p>
+                <p class="x16font textJustify" style="margin-bottom: 10px;">
+                    Например, это может быть фотография только что созданной модной прически в салоне красоты, достигнутого результата в спортивном зале, 
+                    примерка одежды из торгового зала магазина или даже фотография с покупками, только сделанными в торговом центре.
+                </p>
+                <!-- End Text  -->
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <!-- Start Side Carousel  -->
+                <div class="carousel slide carousel-mod" data-ride="carousel" id="side-carousel">
+                    <div class="carousel-inner">
+                        <!-- Start Slide #1 -->
+                        <div class="item active">
+                            <img src="~/App/img/brandbox/SI-006.png" class="img-responsive" alt="" title="">
+                        </div>
+                        <!-- End Slide #1 -->
+                        <!-- Start Slide #2 -->
+                        <div class="item ">
+                            <img src="~/App/img/brandbox/SI-007.png" class="img-responsive" alt="" title="">
+                        </div>
+                        <!-- End Slide #2 -->
+                        <!-- Start Slide #3 -->
+                        <div class="item">
+                            <img src="~/App/img/brandbox/SI-008.png" class="img-responsive" alt="" title="">
+                        </div>
+                        <!-- End Slide #3 -->
+                        <div class="item">
+                            <img src="~/App/img/brandbox/SI-009.png" class="img-responsive" alt="" title="">
+                        </div>
+                        <div class="item">
+                            <img src="~/App/img/brandbox/SI-010.png" class="img-responsive" alt="" title="">
+                        </div>
+                    </div>
+                    <!-- Start Navigation -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#side-carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#side-carousel" data-slide-to="1" class=""></li>
+                        <li data-target="#side-carousel" data-slide-to="2" class=""></li>
+                        <li data-target="#side-carousel" data-slide-to="3" class=""></li>
+                        <li data-target="#side-carousel" data-slide-to="4" class=""></li>
+                    </ol>
+                    <!-- End Navigation -->
+                </div>
+                <!-- End Side Carousel  -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="row">
+        <hr />
+    </div>
+</div>
+
+<section id="services" class="section sectionsmall">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="row serviceFotoBox">
+                    <div class="col-lg-1 col-md-2 col-sm-2 col-xs-3">
+                        <i class="fa fa-cogs fa-5x"></i>
+                    </div>
+                    <div class="col-lg-11 col-md-10 col-sm-10 col-xs-9">
+                        <h4 class="x16font upper22">Современное производительное оборудование</h4>
+                        <p class="x16font">Оснащен огромным сенсорным экраном и качественной фотокамерой.</p>
+                    </div>
+                </div>
+                <div class="row serviceFotoBox">
+                    <div class="col-lg-1 col-md-2 col-sm-2 col-xs-3">
+                        <i class="fa fa-arrows fa-5x"></i>
+                    </div>
+                    <div class="col-lg-11 col-md-10 col-sm-10 col-xs-9">
+                        <h4 class="x16font upper22">Компактный корпус </h4>
+                        <p class="x16font">BrandBox выполнен в тонком корпусе для удобства установки в помещениях любой площади.</p>
+                    </div>
+                </div>
+                <div class="row serviceFotoBox">
+                    <div class="col-lg-1 col-md-2 col-sm-2 col-xs-3">
+                        <i class="fa fa-thumbs-o-up fa-5x"></i>
+                    </div>
+                    <div class="col-lg-11 col-md-10 col-sm-10 col-xs-9">
+                        <h4 class="x16font upper22">Стильный дизайн </h4>
+                        <p class="x16font">BrandBox выделяется необычным, стильным и современным дизайном, а так же качественными материалами используемыми при изготовлении.</p>
+                    </div>
+                </div>
+                <div class="row serviceFotoBox">
+                    <div class="col-lg-1 col-md-2 col-sm-2 col-xs-3">
+                        <i class="fa fa-lightbulb-o fa-5x"></i>
+                    </div>
+                    <div class="col-lg-11 col-md-10 col-sm-10 col-xs-9">
+                        <h4 class="x16font upper22">Оригинальный подход</h4>
+                        <p class="x16font">
+                            Подобный формат гарантировано привлекает внимание клиентов и является отличным способом продвижения информации.
+                        </p>
+                    </div>
+                </div>
+                <div class="row serviceFotoBox">
+                    <div class="col-lg-1 col-md-2 col-sm-2 col-xs-3">
+                        <i class="fa fa-pencil-square-o fa-5x"></i>
+                    </div>
+                    <div class="col-lg-11 col-md-10 col-sm-10 col-xs-9">
+                        <h4 class="x16font upper22">Индивидуальное оформление</h4>
+                        <ul>
+                            <li> <span class="fa fa-angle-double-right x16font"></span> &nbsp;брендирования корпуса</li>
+                            <li> <span class="fa fa-angle-double-right x16font"></span> &nbsp;изготовление и установка Press Wall</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row serviceFotoBox">
+                    <div class="col-lg-1 col-md-2 col-sm-2 col-xs-3">
+                        <i class="fa fa-cloud-upload fa-5x"></i>
+                    </div>
+                    <div class="col-lg-11 col-md-10 col-sm-10 col-xs-9">
+                        <h4 class="x16font upper22">Share Foto (Размещение фото в сети интернет)  </h4>
+                        <p class="x16font">
+                            Возможность размещения фотографий странице Facebook и Vkontakte.
+                        </p>
+                    </div>
+                </div>
+                <div class="row serviceFotoBox">
+                    <div class="col-lg-1 col-md-2 col-sm-2 col-xs-3">
+                        <i class="fa fa-truck fa-5x"></i>
+                    </div>
+                    <div class="col-lg-11 col-md-10 col-sm-10 col-xs-9">
+                        <h4 class="x16font upper22">Бесплатная доставка и настройка </h4>
+                        <p class="x16font">В стоимость, так же входит, доставка и настройка оборудования (В пределах МКАД + 20км).</p>
+                    </div>
+                </div>
+                <div class="row serviceFotoBox">
+                    <div class="col-lg-1 col-md-2 col-sm-2 col-xs-3">
+                        <i class="fa fa-wrench fa-5x"></i>
+                    </div>
+                    <div class="col-lg-11 col-md-10 col-sm-10 col-xs-9">
+                        <h4 class="x16font upper22">Техническое сопровождение </h4>
+                        <p class="x16font">
+                            Техническое сопровождение работы BrandBox нашими специалистами в течении всего срока аренды
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="row">
+        <hr />
+    </div>
+</div>
+
+<section id="price" class="section sectionsmall">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-offset-3 col-sm-6 col-md-6">
+                <!-- Price Table Item -->
+                <div class="price-table text-center">
+                    <div class="price-table-heading">
+                        <h4 class="title pricetitle">Аренда BrandBox </h4>
+                    </div>
+                    <div class="price-table-body">
+                        <p class="value">-- ----&nbsp;<i class="fa fa-rub x52font"></i><small> / месяц</small></p>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item"><i class="icon-ok text-success"></i> Доставка, сборка и настройка оборудования</li>
+                        <li class="list-group-item"><i class="icon-ok text-success"></i> Мгновенное размещение фотографий на сервисе JoyEnjoy.me</li>
+                        <li class="list-group-item"><i class="icon-ok text-success"></i> Техническое сопровождение</li>
+                    </ul>
+                    <div class="price-table-footer"> <a class="btn btn-lg btn-success" href="@Url.Action("Contact", "Home")?services=Brandbox">ЗАКАЗАТЬ!</a> </div>
+                </div>
+                <!-- END Price Table Item -->
+                <!-- START: Will be visible in tablet and mobile devices to make gap between tow price items -->
+                <div class="col-xs-12 col-sm-12 margin-bottom-20"></div>
+                <!-- END: Will be visible in tablet and mobile devices to make gap between tow price items -->
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="socialshare" class="section sectionsmall">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <p class="upper22"><b>Поделится этой страницей</b></p>
+            <ul class="social social-big">
+                <li class="vk"> <a href="http://vk.com/share.php?url=http://joyenjoy.me/Home/Brandbox&title=JOYENJOY.me&description=Профессиональное фотооборудование в стильном дизайне, которое подойдёт для любого формата мероприятий от свадеб и торжеств до корпоративных встреч и презентаций. Тел.: +79264000420." target="_black"> <i class="fa fa-vk"></i> </a> </li>
+                <li class="facebook"> <a href="https://www.facebook.com/sharer/sharer.php?u=http://joyenjoy.me/Home/Brandbox&p[title]=JOYENJOY.me&p[summary]=Профессиональное фотооборудование в стильном дизайне, которое подойдёт для любого формата мероприятий от свадеб и торжеств до корпоративных встреч и презентаций. Тел.: +79264000420." target="_black"> <i class="fa fa-facebook"></i> </a> </li>
+                <li class="pinterest"> <a href="http://www.pinterest.com/pin/create/button/?url=http://joyenjoy.me/Home/Brandbox&media=http://joyenjoy.me/App/img/245x245_JJW.png&description=joyenjoy.me" target="_black"><i class="fa fa-pinterest"></i></a> </li>
+                <li class="twitter"> <a href="https://twitter.com/intent/tweet?text=joyenjoy.me&url=http://joyenjoy.me/Home/Brandbox" target="_black"> <i class="fa fa-twitter"></i> </a> </li>
+            </ul>
+        </div>
+    </div>
+</section>

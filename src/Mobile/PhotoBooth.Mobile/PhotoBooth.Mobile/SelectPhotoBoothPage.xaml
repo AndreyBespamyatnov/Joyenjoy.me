@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PhotoBooth.Mobile.SelectPhotoBoothPage">
+    <RelativeLayout>
+        <Image Source="2048x1536_background.png" 
+               RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+               RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+        <Grid RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}">
+            <StackLayout x:Name="mainLayout">
+                <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="FillAndExpand" HeightRequest="100" BackgroundColor="#121212">
+                    <Image Source="2048x1536_logosmall.png" HorizontalOptions="CenterAndExpand"></Image>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand">
+                    
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" x:Name="ImageStackLayout" BackgroundColor="Transparent">
+                        <Label HorizontalOptions="CenterAndExpand" BackgroundColor="Silver" Text="Выберите фото будку, эта настройка задаётся 1 раз, для изменения необходимо переустановить приложение."></Label>
+                        <ListView x:Name="PhotoBoothList" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsPullToRefreshEnabled="True"></ListView>
+                    </StackLayout>
+                    
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="FillAndExpand" HeightRequest="100" BackgroundColor="#121212">
+
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </RelativeLayout>
+</ContentPage>

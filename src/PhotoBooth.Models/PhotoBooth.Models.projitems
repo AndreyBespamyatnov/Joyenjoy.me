@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="SharedProjectFile_SccProperties">
+    <SharedProjectFile_ProjectGuid>{ec28d3e1-5ac3-45fa-bc0f-d58a8a01c10b}</SharedProjectFile_ProjectGuid>
+    <SharedProjectFile_SccProjectName>SAK</SharedProjectFile_SccProjectName>
+    <SharedProjectFile_SccAuxPath>SAK</SharedProjectFile_SccAuxPath>
+    <SharedProjectFile_SccLocalPath>SAK</SharedProjectFile_SccLocalPath>
+    <SharedProjectFile_SccProvider>SAK</SharedProjectFile_SccProvider>
+  </PropertyGroup>
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>9d43bbdb-ba04-435a-8553-7e2574b24a21</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>PhotoBooth.Models</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Email.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Photo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PhotoBoothEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PhotoEvent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PrintQueue.cs" />
+  </ItemGroup>
+</Project>

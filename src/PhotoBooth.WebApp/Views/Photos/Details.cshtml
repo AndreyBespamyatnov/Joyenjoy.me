@@ -1,0 +1,82 @@
+﻿@model PhotoBooth.Models.Photo
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Photo</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.PhotoEvent.Name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.PhotoEvent.Name)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.LocalPathToImage)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.LocalPathToImage)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.BlobPathToImage)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.BlobPathToImage)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.BlobPathToPreviewImage)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.BlobPathToPreviewImage)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Md5Hash)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Md5Hash)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ImageWidth)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ImageWidth)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ImageHeight)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ImageHeight)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Назад к списку фото для события", "EventPhotos", new { photoEventId = Model.PhotoEventId })
+    </p>
+</body>
+</html>
